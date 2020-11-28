@@ -26,5 +26,6 @@ Route::prefix('/v1')->group(function () {
 
     Route::post('/register-note', 'NoteController@store');
     Route::get('/matriz', 'NoteController@index');
+    Route::delete('/delete-element-matriz/{id}', 'NoteController@destroy');
     
 });

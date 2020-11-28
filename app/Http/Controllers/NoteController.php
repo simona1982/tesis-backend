@@ -95,6 +95,14 @@ class NoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $note = DB::table('notes')->find($id);
+
+      if(!$note) {
+          throw new Exception("note does not exist.");
+      }
+
+      return DB::table('notes')->delete($id);
+
+      return $note;
     }
 }
